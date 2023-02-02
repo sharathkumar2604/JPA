@@ -25,6 +25,7 @@ import lombok.ToString;
 public class BulbDto {
 	@Id
 	private int id;
+
 	private String name;
 	private String color;
 	private String type;

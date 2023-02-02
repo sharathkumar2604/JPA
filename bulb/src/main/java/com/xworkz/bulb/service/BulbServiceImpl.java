@@ -17,7 +17,8 @@ if(dto!=null)
 //
 //{
 //System.out.println(bulbDto);
-	boolean status= repo.create(dto);
+	boolean status=
+			repo.create(dto);
 	System.out.println(status);
 	return true;
 	
@@ -41,7 +42,7 @@ if(id>0)
 		return null;
 	}
 
-	public BulbDto findByName(String name) {
+	public List<BulbDto> findByName(String name) {
 if(name.length()>1)
 {
 	return repo.findByName(name);

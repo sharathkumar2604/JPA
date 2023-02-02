@@ -2,6 +2,7 @@ package com.xworkz.bulb.repo;
 
 import java.util.List;
 
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -53,14 +54,30 @@ public class BulbRepoImpl implements BulbRepo {
 		return null;
 }
 
-	public BulbDto findByName(String name) {
+//	public BulbDto findByName(String name) {
+//		if(em!=null)
+//		{
+//			em.getTransaction().begin();
+//		Query query = em.createNamedQuery("findByName", BulbDto.class);
+//		query.setParameter("nm", name);
+//		em.getTransaction().commit();
+//		return (BulbDto) query.getSingleResult();
+//		
+//		
+//		
+//		
+//	}
+//		return null;
+//}
+	
+	public List<BulbDto> findByName(String name) {
 		if(em!=null)
 		{
 			em.getTransaction().begin();
 		Query query = em.createNamedQuery("findByName", BulbDto.class);
 		query.setParameter("nm", name);
 		em.getTransaction().commit();
-		return (BulbDto) query.getSingleResult();
+		return query.getResultList();
 		
 		
 		

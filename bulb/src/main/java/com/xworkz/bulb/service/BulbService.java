@@ -12,7 +12,7 @@ public interface BulbService {
 	
 	public BulbDto findById(int id);
 	
-	public BulbDto findByName(String name);
+	public List<BulbDto> findByName(String name);
 	
 
 }
